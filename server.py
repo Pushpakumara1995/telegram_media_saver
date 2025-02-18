@@ -1,6 +1,13 @@
 from flask import Flask, request
 from telethon import TelegramClient
 import asyncio
+import os
+
+API_ID = os.environ.get("API_ID")
+API_HASH = os.environ.get("API_HASH")
+PHONE_NUMBER = os.environ.get("PHONE_NUMBER")
+CHAT_ID = os.environ.get("CHAT_ID")
+
 
 app = Flask(__name__)
 
