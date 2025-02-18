@@ -8,6 +8,13 @@ import os
 # PHONE_NUMBER = os.environ.get("PHONE_NUMBER")
 # CHAT_ID = os.environ.get("CHAT_ID")
 
+# Replace with your actual Telegram API credentials and phone number
+API_ID = "YOUR_API_ID"
+API_HASH = "YOUR_API_HASH"
+PHONE_NUMBER = "YOUR_PHONE_NUMBER"
+
+# Replace with the chat (group/user) ID where messages should be sent
+CHAT_ID = "GROUP_CHAT_ID"
 
 app = Flask(__name__)
 
