@@ -27,5 +27,5 @@ def send_telegram():
     return {"status": "success", "message": "Message sent to Telegram"}
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
 
