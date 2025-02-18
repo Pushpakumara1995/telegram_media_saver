@@ -1,12 +1,12 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from telethon import TelegramClient
 import asyncio
 import os
 
-API_ID = os.environ.get("API_ID")
-API_HASH = os.environ.get("API_HASH")
-PHONE_NUMBER = os.environ.get("PHONE_NUMBER")
-CHAT_ID = os.environ.get("CHAT_ID")
+# API_ID = os.environ.get("API_ID")
+# API_HASH = os.environ.get("API_HASH")
+# PHONE_NUMBER = os.environ.get("PHONE_NUMBER")
+# CHAT_ID = os.environ.get("CHAT_ID")
 
 
 app = Flask(__name__)
@@ -25,6 +25,10 @@ def send_telegram():
 
     asyncio.run(send_message(media_link))
     return {"status": "success", "message": "Message sent to Telegram"}
+
+@app.route('/')
+def index():
+    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
 
 if __name__ == "__main__":
     app.run(debug=True, port=os.getenv("PORT", default=5000))
